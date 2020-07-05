@@ -72,8 +72,12 @@ app.get("/city",function(req,res){
                     var hr = dt.getHours();
                     var AMorPM = (hr >= 12 ? ' pm':' am');
                     hr = (hr % 12);
+                    if(hr==2){
+                        hr=12;
+                    }
                     var m = "0" + dt.getMinutes();
                     var s = "0" + dt.getSeconds();
+                    console.log(hr,m,s)
                     return hr+ ':' + m.substr(-2) + ':' + s.substr(-2) + AMorPM;    
                 }
     
