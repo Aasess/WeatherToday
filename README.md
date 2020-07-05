@@ -12,3 +12,7 @@ node app.js
 
 # Description
 API call "api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}".Get your api key by signing it into: https://openweathermap.org or I have used my own key.
+
+# Demo
+
+  <img src="/demo/snap.PNG">
