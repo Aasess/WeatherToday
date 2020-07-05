@@ -1,0 +1,77 @@
+<%- include("partials/header") %>
+        <br/>
+        <br/>
+    <div class="container text-white pt-5 mt-5 mb-2 bg-info">
+        <form action="/city" method="GET">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">CityName</span>
+                </div>
+                <input type="text" class="form-control" placeholder="e.g: Kohalpur,NP" aria-label="Username" aria-describedby="basic-addon1" name="Search">
+            </div>
+        </form>
+        <hr color="white"/>
+        <div class="row ">
+            <div class="col-lg-6 pt-2 text-right">
+                <small>(HomeTown)</small>
+                <h1><%= dict.name %></h1>
+            </div>
+
+            <div class="col-lg-6 text-left ">
+                <img src="http://openweathermap.org/img/wn/<%=dict.iconurl%>@2x.png" class="img-fluid">
+            </div>
+        </div>
+        
+        <div class="card text-white bg-dark mb-3 mx-auto" style="max-width: 30rem;">
+            <div class="card-header text-center"><h5>Temperature Details</h5></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="card-text">Current Temperature:</h6>
+                    </div>
+                    <div class="col">
+                        <h6 class="card-text"> <%= dict.tempr%> ℃</h6>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="card-text">Description:</h6>
+                    </div>
+                    <div class="col">
+                        <h6 class="card-text"> <%= dict.Description[0].toUpperCase()%><%= dict.Description.slice(1)%></h6>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="card-text">Feels Like:</h6>
+                    </div>
+                    <div class="col">
+                        <h6 class="card-text">  <%= dict.feelslike%> ℃</h6>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="card-text"><img src="https://img.icons8.com/fluent/44/000000/sunrise.png" title="Sun Rise Time"/></h6>
+                    </div>
+                    <div class="col pt-2">
+                        <h6 class="card-text">  <%= dict.sunrise%></h6>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="card-text"><img src="https://img.icons8.com/fluent/44/000000/sunset.png" title="Sun Set Time"/></h6>
+                    </div>
+                    <div class="col pt-2">
+                        <h6 class="card-text">  <%= dict.sunset%></h6>
+                    </div>
+                </div>
+              
+            </div>
+          </div>
+          <br/>
+    </div>
+<%- include("partials/footer") %>
